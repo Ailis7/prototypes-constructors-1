@@ -26,5 +26,3 @@ export default function Character(name, type) {
     console.log(e.message);
   }
 }
-const man = new Character('В', 'Bowman');
-
