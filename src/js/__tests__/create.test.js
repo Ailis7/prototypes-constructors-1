@@ -7,12 +7,16 @@ test('create Bowman', () => {
   });
 });
 
-test('error', () => {
-  const man = new Character('M', 'Daemon');
-  expect(man).toEqual({}); // понять не могу как проверить Jestом на ошибку
-}); // toThrow и toThrowError не работают
+test('слишком длинно', () => {
+  expect(() => {
+    const man = new Character('Mухахахахахахахаха', 'Undead');
+    man();
+  }).toThrowError();
+});
 
-test('error', () => {
-  const man = new Character('Mухахахахахахахаха', 'Undead');
-  expect(man).toEqual({}); // понять не могу как проверить Jestом на ошибку
-}); // toThrow и toThrowError не работают
+test('слишком коротко', () => {
+  expect(() => {
+    const man = new Character('M', 'Daemon');
+    man();
+  }).toThrowError();
+});
